@@ -14,7 +14,7 @@ def append_rows_to_sheet(template_path: str, output_path: str, sheet_name: str, 
     ws = wb[sheet_name]
 
     # Adjust these to match your template headers exactly
-    expected_headers = ["Raw column name", "Bronze column name"]
+    expected_headers = ["Raw table name", "Raw column name", "Data Type 2/ Precision", "Bronze table name", "Bronze column name"]
     header_row, header_norm = find_header_row(ws, expected_headers)
 
     if not header_row:
@@ -53,3 +53,4 @@ def append_rows_to_sheet(template_path: str, output_path: str, sheet_name: str, 
         r += 1
 
     wb.save(output_path)
+
